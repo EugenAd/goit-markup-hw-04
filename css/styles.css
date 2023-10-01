@@ -87,6 +87,7 @@ a.link-navigation.current {
     display: flex;
     align-items: center;
     color: var(--color-text);
+    text-wrap: nowrap;
 }   
 .contact-header a:hover {
     color: var(--hover);
@@ -105,8 +106,7 @@ a.link-navigation.current {
     letter-spacing: 0.28px;
     display: flex;
      padding: 0 10px 0 330px;
-    
-}
+       }
 .contact-header :first-child {
     width: 161px;
     margin-right: 40px;
@@ -116,16 +116,11 @@ a.link-navigation.current {
     width: 132px;
 }
 .contact-header .icon-mail {
-    width: 16px;
-    height: 12px;
     margin-right: 10px;
     fill: currentColor;
 }
 
 .contact-header .icon-phone {
-    
-    width: 10px;
-    height: 16px;
     margin-right: 10px;
     fill: currentColor;
 }
@@ -145,6 +140,7 @@ a.link-navigation.current {
     height: 100%;
     background-image: linear-gradient(to top, #2F303A66 0%, #2F303A66 100%);
     opacity: 0.4;
+    pointer-events: none;
 }
 #title {
     font-weight: 900;
@@ -190,6 +186,16 @@ a.link-navigation.current {
     margin-left: 30px;
     flex-basis: calc((100% - 120px) / 4);
      }
+.main-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 270px;
+    height: 120px;
+    background-color: var(--filter-background);
+    margin-bottom: 30px;
+    border-radius: 4px;
+}
 .what-we-do,
 .our-team {
     flex-direction: column;
@@ -279,6 +285,9 @@ a.link-navigation.current {
     margin: 0 auto;
     white-space: nowrap;
     }
+.social-media {
+    display: flex;
+}
 .footer .container {
     flex-direction: column;
     padding-top: 60px;
