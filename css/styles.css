@@ -9,8 +9,14 @@
     --link-active:#f00;
     --studio-logo-color:#000000;
     --request-hover-color:#188CE8;
+    --icon-color:#AFB1B8;
 }
-
+a {
+    text-decoration: none;
+}
+ul {
+    list-style-type: none;
+}
 body {
     max-width: 1600px;
     font-family: 'Roboto' , sans-serif;
@@ -33,12 +39,14 @@ body {
 }
 .logo-link {
     width: 145px;
+    height: 31px;
    } 
 .main-navigation ul {
     display: flex;
     width: 259px;
     justify-content: space-between;
-    padding-inline-start: 0%;
+       padding-top: 32px;
+    height: 100%;
 }
 .logo {
     font-family: 'Raleway' , sans-serif;
@@ -56,10 +64,6 @@ body {
 .studio-logo-header {
     color: var(--studio-logo-color);
 }
-.footer .container .logo-link,
-.global-header a {
-    text-decoration: none;
-}
 .main-navigation a {
     color: var(--default-color);
 }
@@ -75,12 +79,26 @@ body {
 a.link-navigation.current {
     color: var(--hover);
 }
+.current {
+    position: relative;
+}
+.main-navigation ul li .current::after {
+    content: "";
+    display: block;
+    height: 4px;
+    width: 100%;
+    border-radius: 2px;
+    background-color: var(--hover);
+    position: absolute;
+    top: 44px;
+}
 .main-navigation {
     font-weight: 500;
     font-size: 14px;
     line-height: var(--line-h1641);
     letter-spacing: 0.28px;
    width: 352px;
+   height: 100%;
    padding-left: 93px;
     }
 .contact-header a {
@@ -117,18 +135,19 @@ a.link-navigation.current {
 }
 .contact-header .icon-mail {
     margin-right: 10px;
-    fill: currentColor;
+    --color: currentColor;
 }
 
 .contact-header .icon-phone {
     margin-right: 10px;
-    fill: currentColor;
+    --color: currentColor;
 }
 .head {
     display: flex;
     background-color: #C4C4C4;
     position:relative;
     background-image: url(../images/background-image.jpg);
+    max-width: 1600px;
     height: 600px;
     flex-direction: column;
     align-items: center;
@@ -196,6 +215,11 @@ a.link-navigation.current {
     margin-bottom: 30px;
     border-radius: 4px;
 }
+h4 {
+    font-family: 'Roboto' , sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+}
 .what-we-do,
 .our-team {
     flex-direction: column;
@@ -237,7 +261,7 @@ a.link-navigation.current {
     background-color: var(--filter-background);
     padding: 94px 0 94px 0;
 }
-.our-team .team li:nth-child(-n + 3) {
+.our-team .team > li:nth-child(-n + 3) {
     margin-right: 30px;
 }
 .members-details {
@@ -282,15 +306,69 @@ a.link-navigation.current {
     color: var(--color-text);
     line-height: 1.17;
     letter-spacing: 0.48px;
-    margin: 0 auto;
+    margin: 0 auto 16px;
     white-space: nowrap;
     }
 .social-media {
     display: flex;
+    padding: 0 32px 0 32px;
+    }
+.social-media li:nth-child(-n + 3) {
+    margin-right: 10px;
 }
-.footer .container {
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--icon-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+}
+.circle:hover {
+    background-color: var(--hover);
+    color: var(--white-color);
+ }
+ .circle:focus {
+    background-color: var(--hover);
+        color: var(--white-color);
+
+ }
+
+.circle svg {
+  --color1: currentColor;
+}
+.customers {
+    display: flex;
+    }
+.regular-customers ul li:nth-child(-n+5) {
+    margin-right: 30px;
+}
+.regular-customers {
+    display: flex;
     flex-direction: column;
-    padding-top: 60px;
+    padding: 94px 15px 94px 15px;
+}
+.regular-customers-rectangular {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--icon-color);
+    width: 170px;
+    height: 92px;
+    border: 1px solid var(--icon-color);
+    border-radius: 4px;
+}
+
+.regular-customers-rectangular:hover {
+    color: var(--hover);
+    border-color: var(--hover);
+    }
+.icon-customers {
+    --color2: currentColor ;
+}    
+.first-part-footer {
+        padding-top: 60px;
     padding-bottom: 60px;
 }
 .footer {
@@ -322,8 +400,7 @@ a.link-navigation.current {
     margin: 12px 0 12px 0;
 }
 .contact-footer a {
-    text-decoration: none;
-    color: var(--white-color);
+       color: var(--white-color);
     opacity: 0.6;
     line-height: 1.14;
 }
@@ -336,6 +413,42 @@ a.link-navigation.current {
 .contact-footer a:active {
     color: var(--link-active);
 }
+.first-part-footer .logo-link {
+    display: block;
+}
+.social {
+    padding: 75px 0 96px 70px;
+}
+.social h4 {
+
+    color: var(--white-color);
+    margin-bottom: 20px;
+}
+.social-media-webstudio {
+    display: flex;
+}
+.social-media-webstudio li:nth-child(-n+3) {
+    margin-right: 10px;
+}
+.circle-webstudio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--white-color);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1); 
+}
+.circle-webstudio a {
+    color: var(--white-color);
+}
+.circle-webstudio:hover {
+    background-color: var(--hover);
+}
+.circle-webstudio:focus {
+    background-color: var(--hover);
+}
 .portofolio-section {
     padding: 94px 0;
 }
@@ -343,11 +456,18 @@ a.link-navigation.current {
     cursor: pointer;
     background-color: var(--hover);
     color: var(--white-color);
+        box-shadow: 0px 2px 2px 0px #0000001F;
+            box-shadow: 0px 1px 2px 0px #00000014;
+            box-shadow: 0px 3px 1px 0px #0000001A;
 }
+
 .filter-button:focus {
     background-color: var(--hover);
     color: var(--white-color);
-}
+        box-shadow: 0px 2px 2px 0px #0000001F;
+            box-shadow: 0px 1px 2px 0px #00000014;
+            box-shadow: 0px 3px 1px 0px #0000001A;
+            }
 .filter-button:active {
     box-shadow: 0px 2px 2px 0px #0000001F;
     box-shadow: 0px 1px 2px 0px #00000014;
@@ -362,17 +482,9 @@ a.link-navigation.current {
     background-color: var(--filter-background);
     border-radius: 4px;
     border: 0;
+    height: 100%;
     position: relative;
-}
-.filter-bar,
-.portofolio,
-.main-section-list,
-.main-navigation ul,
-.what-we-do ul,
-.our-team ul
- {
-    list-style-type: none;
-}
+   }
 .portofolio-ithems {
     font-size: 18px;
     line-height: 2;
@@ -394,7 +506,7 @@ a.link-navigation.current {
 .filter-bar {
     display: flex;
     justify-content: center;
-    padding: 0;
+    height: 38px;
 }
 .filter-bar li:first-child .filter-button {
     width: 64px;
@@ -435,4 +547,12 @@ a.link-navigation.current {
     border-bottom: 1px solid #EEEEEE;
     border-left: 1px solid #EEEEEE;
     border-right: 1px solid #EEEEEE;
+}
+.portofolio li:hover {
+    box-shadow: 1px 4px 6px 0px #00000029;
+    
+        box-shadow: 0px 4px 4px 0px #0000000F;
+    
+        box-shadow: 0px 1px 1px 0px #0000001F;
+        cursor: pointer;
 }
